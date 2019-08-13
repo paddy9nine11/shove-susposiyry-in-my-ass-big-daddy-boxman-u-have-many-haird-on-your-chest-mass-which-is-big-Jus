@@ -1,0 +1,498 @@
+--[[---------------------------------------------------------------------------
+DarkRP custom jobs
+---------------------------------------------------------------------------
+This file contains your custom jobs.
+This file should also contain jobs from DarkRP that you edited.
+
+Note: If you want to edit a default DarkRP job, first disable it in darkrp_config/disabled_defaults.lua
+      Once you've done that, copy and paste the job to this file and edit it.
+
+The default jobs can be found here:
+https://github.com/FPtje/DarkRP/blob/master/gamemode/config/jobrelated.lua
+
+For examples and explanation please visit this wiki page:
+http://wiki.darkrp.com/index.php/DarkRP:CustomJobFields
+
+Add your custom jobs under the following line:
+---------------------------------------------------------------------------]]
+
+TEAM_ADMIN = DarkRP.createJob("SOD", {
+    color = Color(255, 255, 255, 255),
+    model = {"models/player/combine_super_soldier.mdl"},
+    description = [[Do your fucin job]],
+    weapons = {"swep_asm", "weapon_physgun", "weapon_medkit", "weaponchecker", "stunstick", "mw3_barrett"},
+    command = "SOD",
+    max = 10,
+    salary = 400,
+    admin = 1,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Staff",
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"admin", "superadmin", "moderator", "trialmod"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+
+TEAM_ADMIN = DarkRP.createJob("SOD", {
+    color = Color(255, 255, 255, 255),
+    model = {"models/player/combine_super_soldier.mdl"},
+    description = [[Do your fucin job]],
+    weapons = {"swep_asm", "weapon_physgun", "weapon_medkit", "weaponchecker", "stunstick", "mw3_barrett"},
+    command = "SOD",
+    max = 10,
+    salary = 400,
+    admin = 1,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Staff",
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"admin", "superadmin", "moderator", "trialmod"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	
+	
+	
+	
+	
+	TEAM_Infantry = DarkRP.createJob("The Infantry Rifleman", {
+    color = Color(0, 144, 255, 255),
+    model = {"models/ninja/bf3/us_test.mdl"},
+    description = [[You are Infantry]],
+    weapons = {"weaponchecker", "keys", "salute", "weapon_neurowep_teargas_grey", "fas2_m67", "cw_p99", "cw_ar15"},
+    command = "TIRIFLEMAN",
+    max = 10,
+    salary = 100,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(100)
+        ply:SetHealth(100)
+        ply:SetArmor(10)
+    end,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "The Infantry"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	TEAM_Infantry = DarkRP.createJob("The Infantry Squad Leader", {
+    color = Color(0, 144, 255, 255),
+    model = {"models/ninja/bf3/us_francis.mdl"},
+    description = [[You are a Squad Lead in the Infantry]],
+    weapons = {"weaponchecker", "keys", "salute", "weapon_neurowep_teargas_grey", "fas2_m67", "cw_p99", "cw_ar15", "weapon_neurowep_teargas_red", "weapon_neurowep_teargas_green"},
+    command = "TIRIFLEMANSquadLEad",
+    max = 6,
+    salary = 450,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "The Infantry",
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(100)
+        ply:SetHealth(100)
+        ply:SetArmor(10)
+    end,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "The Infantry Squad Lead"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	
+	TEAM_Infantry = DarkRP.createJob("The Infantry Medic", {
+    color = Color(0, 144, 255, 255),
+    model = {"models/tlsaudrl2548/delta3.mdl"},
+    description = [[You are a medic in the Infantry]],
+    weapons = {"weaponchecker", "keys", "salute", "weapon_neurowep_teargas_grey", "fas2_m67", "cw_p99", "cw_ar15", "fas2_ifak"},
+    command = "TIRIFLEMANmedic",
+    max = 6,
+    salary = 450,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "The Infantry",
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(100)
+        ply:SetHealth(100)
+        ply:SetArmor(10)
+    end,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "The Infantry Medic"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	TEAM_Infantry = DarkRP.createJob("The Infantry AT Rrifleman", {
+    color = Color(0, 144, 255, 255),
+    model = {"models/tlsaudrl2548/delta4.mdl"},
+    description = [[You are a medic in the Infantry]],
+    weapons = {"weaponchecker", "keys", "salute", "weapon_neurowep_teargas_grey", "fas2_m67", "cw_p99", "cw_ar15", "weapon_neurowep_javelin"},
+    command = "TIRIFLEMANmedic",
+    max = 6,
+    salary = 450,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "The Infantry",
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(100)
+        ply:SetHealth(100)
+        ply:SetArmor(10)
+    end,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "The Infantry AT Rifleman"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	TEAM_Infantry = DarkRP.createJob("The Infantry AA Rrifleman", {
+    color = Color(0, 144, 255, 255),
+    model = {"models/tlsaudrl2548/player/deltar4.mdl"},
+    description = [[You are an in the Infantry]],
+    weapons = {"weaponchecker", "keys", "salute", "weapon_neurowep_teargas_grey", "fas2_m67", "cw_p99", "cw_ar15", "cod4rm_fim92stinger"},
+    command = "TIRIFLEMANAA",
+    max = 6,
+    salary = 450,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "The Infantry",
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(100)
+        ply:SetHealth(100)
+        ply:SetArmor(10)
+    end,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "The Infantry AA Rifleman"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	TEAM_Infantry = DarkRP.createJob("The Infantry Marksman", {
+    color = Color(0, 144, 255, 255),
+    model = {"models/tlsaudrl2548/player/deltar2.mdl"},
+    description = [[You are an in the Infantry]],
+    weapons = {"weaponchecker", "keys", "salute", "weapon_neurowep_teargas_grey", "fas2_m67", "cw_p99", "fas2_sr25"},
+    command = "TIRIFLEMANMarksman",
+    max = 4,
+    salary = 450,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "The Infantry",
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(100)
+        ply:SetHealth(100)
+        ply:SetArmor(10)
+    end,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "The Infantry Marksman"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	TEAM_Infantry = DarkRP.createJob("The Infantry Auto Rifleman", {
+    color = Color(0, 144, 255, 255),
+    model = {"models/tlsaudrl2548/mask1_5.mdl"},
+    description = [[You are an in the Infantry]],
+    weapons = {"weaponchecker", "keys", "salute", "weapon_neurowep_teargas_grey", "fas2_m67", "cw_p99", "cw_m249_official"},
+    command = "TIRIFLEMANauto",
+    max = 4,
+    salary = 450,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "The Infantry",
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(100)
+        ply:SetHealth(100)
+        ply:SetArmor(30)
+    end,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "The Infantry Auto Rifleman"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	TEAM_Infantry = DarkRP.createJob("The Infantry CQB", {
+    color = Color(0, 144, 255, 255),
+    model = {"models/tlsaudrl2548/player/deltar5.mdl"},
+    description = [[You are an in the Infantry]],
+    weapons = {"weaponchecker", "keys", "salute", "weapon_neurowep_teargas_grey", "fas2_m67", "cw_p99", "cw_l85a2", "cw_shorty"},
+    command = "TIRIFLEMANauto",
+    max = 4,
+    salary = 450,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "The Infantry",
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(100)
+        ply:SetHealth(100)
+        ply:SetArmor(10)
+    end,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "The Infantry CQB"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	TEAM_Infantry = DarkRP.createJob("The Infantry Team Leader", {
+    color = Color(0, 144, 255, 255),
+    model = {"models/tlsaudrl2548/player/delta.mdl"},
+    description = [[You are an in the Infantry]],
+    weapons = {"weaponchecker", "keys", "salute", "weapon_neurowep_teargas_grey", "fas2_m67", "cw_p99", "cw_ar15", "weapon_neurowep_teargas_red"},
+    command = "TIRIFLEMANauto",
+    max = 6,
+    salary = 450,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "The Infantry",
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(100)
+        ply:SetHealth(100)
+        ply:SetArmor(10)
+    end,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "The Infantry Team Leader"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	TEAM_Infantry = DarkRP.createJob("The Infantry Breacher", {
+    color = Color(0, 144, 255, 255),
+    model = {"models/tlsaudrl2548/player/delta3.mdl"},
+    description = [[You are an in the Infantry]],
+    weapons = {"weaponchecker", "keys", "salute", "weapon_neurowep_teargas_grey", "fas2_m67", "cw_p99", "weapon_breachingcharge", "cw_ump45", "cw_m3super90"},
+    command = "TIRIFLEMANauto",
+    max = 4,
+    salary = 450,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "The Infantry",
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(100)
+        ply:SetHealth(100)
+        ply:SetArmor(10)
+    end,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "The Infantry Breacher"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	TEAM_Engineer = DarkRP.createJob("The Infantry Engineer ", {
+    color = Color(0, 144, 255, 255),
+    model = {"models/tlsaudrl2548/player/deltar4.mdl"},
+    description = [[You are an in the Infantry]],
+    weapons = {"weaponchecker", "keys", "salute", "weapon_neurowep_teargas_grey", "fas2_m67", "cw_p99", "cw_ar15", "cod4rm_c4", "cod4rm_claymore", "m9k_proxy_mine", "alydus_fortificationbuildertablet"},
+    command = "TIRIFLEMANauto",
+    max = 4,
+    salary = 450,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "The Infantry",
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(100)
+        ply:SetHealth(100)
+        ply:SetArmor(10)
+    end,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "The Infantry Breacher"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	TEAM_Infantry = DarkRP.createJob("The Irish Guard", {
+    color = Color(16, 61, 16, 255),
+    model = {"models/arachnit/callofduty/modern_warfare_remastered/characters/sas/cpt_john_price/cpt_john_price_woodland_outfit5_balaclava_gmod.mdl"},
+    description = [[TIG]],
+    weapons = {"keys", "weaponchecker", "weapon_neurowep_teargas_grey", "weapon_neurowep_teargas_green", "salute", "fas2_g36c", "fas2_glock20", "fas2_m67"},
+    command = "TIG",
+    max = 0,
+    salary = 351,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Infantry",
+    NeedToChangeFrom = TIG,
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(100)
+        ply:SetHealth(100)
+        ply:SetArmor(5)
+    end
+	
+	
+	
+	TEAM_Enlisted = DarkRP.createJob("Enlisted ", {
+    color = Color(255, 255, 255, 255),
+    model = {"models/humans/clannysmilitary/male_02.mdl"},
+    description = [[You Go Through Basic Training r]],
+    weapons = {"weaponchecker", "keys", "salute", "cw_l85a2"},
+    command = "enlisted MI",
+    max = 4,
+    salary = 100,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Civilian",
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(50)
+        ply:SetHealth(50)
+        ply:SetArmor(0)
+    end,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	
+	TEAM_Seller = DarkRP.createJob("Civilian", {
+    color = Color(255, 255, 255, 255),
+    model = {
+        "models/drem/cch/female_01.mdl",
+        "models/drem/cch/female_06.mdl",
+        "models/drem/cch/npc/male_08.mdl",
+        "models/drem/cch/npc/male_01.mdl",
+        "models/drem/cch/npc/male_05.mdl",
+        "models/drem/cch/npc/female_06.mdl",
+        "models/drem/cch/npc/female_01.mdl"
+    },
+    description = [[You Go Through Basic Training r]],
+    weapons = {"weaponchecker", "keys", "salute"},
+    command = "Civ",
+    max = 0,
+    salary = 100,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Civilian",
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(90)
+        ply:SetHealth(90)
+        ply:SetArmor(0)
+    end,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+	TRAM_INFANTRY = DarkRP.createJob("The Irish Guards", {
+    color = Color(7, 94, 0, 255),
+    model = {
+        "models/arachnit/callofduty/modern_warfare_remastered/characters/sas/cpt_john_price/cpt_john_price_woodland_outfit4_balaclava_gmod.mdl",
+        "models/arachnit/callofduty/modern_warfare_remastered/characters/sas/cpt_john_price/cpt_john_price_woodland_outfit5_balaclava_gmod.mdl"
+    },
+    description = [[Light Infantry]],
+    weapons = {"csgo_bayonet", "cw_frag_grenade", "cw_p99", "salute", "weapon_neurowep_teargas_refill", "keys", "weaponchecker", "cw_l85a2"},
+    command = "TIG",
+    max = 5,
+    salary = 250,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "The Infantry",
+    NeedToChangeFrom = TRAM_INFANTRYTIG
+	
+	
+	
+	
+	
+	
+	TRAM_RAC = DarkRP.createJob("Crewman", {
+    color = Color(255, 0, 0, 255),
+    model = {"models/mw2guy/bz/tfbzca01.mdl"},
+    description = [[Light Infantry]],
+    weapons = {"cw_frag_grenade", "cw_p99", "salute", "keys", "weaponchecker", "weapon_neurowep_teargas_refill", "cw_l85a2"},
+    command = "Crew",
+    max = 5,
+    salary = 102,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Royal Armoured Corps",
+    NeedToChangeFrom = TRAM_Crew,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"Crewman"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	TRAM_RAC = DarkRP.createJob("Lead Crewman", {
+    color = Color(255, 0, 0, 255),
+    model = {"models/mw2guy/bz/bzgb01.mdl"},
+    description = [[Light Infantry]],
+    weapons = {"cw_frag_grenade", "cw_p99", "salute", "keys", "weaponchecker", "weapon_neurowep_teargas_refill", "fas2_sg552", "weapon_neurowep_teargas_purple"},
+    command = "Crew",
+    max = 5,
+    salary = 201,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Royal Armoured Corps",
+    NeedToChangeFrom = TRAM_LCrew,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"Lead Crewman"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+	TRAM_RAC = DarkRP.createJob("Royal Armoured Corp Medic", {
+    color = Color(255, 0, 0, 255),
+    model = {"models/mw2guy/bz/tfbzw01.mdl"},
+    description = [[RAC]],
+    weapons = {"cw_frag_grenade", "cw_p99", "salute", "keys", "weaponchecker", "weapon_neurowep_teargas_refill", "weapon_neurowep_teargas_purple", "fas2_ifak", "fas2_mp5a5"},
+    command = "RACMed",
+    max = 5,
+    salary = 201,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Royal Armoured Corps",
+    NeedToChangeFrom = TEAM_RACMedic,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"RAC Medic"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "",
+	
+
+
+--[[---------------------------------------------------------------------------
+Define which team joining players spawn into and what team you change to if demoted
+---------------------------------------------------------------------------]]
+GAMEMODE.DefaultTeam = TEAM_CITIZEN
+--[[---------------------------------------------------------------------------
+Define which teams belong to civil protection
+Civil protection can set warrants, make people wanted and do some other police related things
+---------------------------------------------------------------------------]]
+GAMEMODE.CivilProtection = {
+    [TEAM_POLICE] = true,
+    [TEAM_CHIEF] = true,
+    [TEAM_MAYOR] = true,
+}
+--[[---------------------------------------------------------------------------
+Jobs that are hitmen (enables the hitman menu)
+---------------------------------------------------------------------------]]
+DarkRP.addHitmanTeam(TEAM_MOB)
